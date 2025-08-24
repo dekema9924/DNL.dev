@@ -12,7 +12,46 @@
   }
 }
 
-/* body {
-  background-color: black;
-  color: white;
-} */
+body {
+  background-color: #faf9f7; /* warm off-white background */
+  color: #1a1a1a; /* deep charcoal text */
+  font-family: "Georgia", "Times New Roman", serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+p {
+  color: #333; /* softer body text for long reads */
+  line-height: 1.7;
+}
+
+a {
+  color: #004080; /* elegant deep blue for links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body .dark {
+  background-color: #1c1c1c; /* charcoal base */
+  color: #e6e6e6; /* soft white text */
+}
+
+body .dark h1,
+body .dark h2,
+body.dark h3 {
+  color: #f5f5f5; /* almost white for headlines */
+}
+
+body .dark p {
+  color: #c9c9c9; /* softer gray for body text */
+}
+
+body .dark a {
+  color: #8ab4f8; /* muted blue links */
+}
+
+body .dark a:hover {
+  color: #aecbfa; /* lighter blue on hover */
+}

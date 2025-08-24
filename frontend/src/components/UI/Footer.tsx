@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
-        <footer className="bg-black text-white px-6 py-12">
+        <footer className="bg-[#1d1d1d] text-white border-t border-gray-600 px-6 py-12">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
 
                 {/* Newsletter */}
@@ -23,7 +23,7 @@ export default function Footer() {
                 {/* Social Media */}
                 <div>
                     <h3 className="uppercase text-sm font-semibold mb-4">Social Media</h3>
-                    <ul className="space-y-2 text-gray-400">
+                    <ul className="space-y-2 ">
                         <li><a href="#" className="hover:text-white">Facebook</a></li>
                         <li><a href="#" className="hover:text-white">Instagram</a></li>
                         <li><a href="#" className="hover:text-white">Pinterest</a></li>
@@ -35,7 +35,7 @@ export default function Footer() {
                 <div>
                     <h3 className="uppercase text-sm font-semibold mb-4">Let’s Talk</h3>
                     <ul className="space-y-3 text-gray-400 text-sm">
-                        <li>📧 danekema9924@gmail.com</li>
+                        <li>📧danekema9924@gmail.com</li>
                         <li>📞 404-200-0349</li>
                         <li>📍 comfort of my desk</li>
                     </ul>
@@ -57,7 +57,7 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <p className="mt-6 text-center text-gray-500 text-xs">
+            <p className="mt-6 text-center !text-gray-500  text-xs">
                 © 2025 DNL.DEV
                 portfolio. All Rights Reserved.
             </p>

@@ -29,7 +29,7 @@ function Services() {
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                             LET’S BRING YOUR STORY INTO FOCUS.
                         </h1>
-                        <p className="text-md sm:text-lg max-w-xl mb-6">
+                        <p className="text-md sm:text-lg max-w-xl mb-6 !text-white">
                             Whether it's a personal milestone, a brand vision, or a fleeting moment—
                             I'm here to help you capture it beautifully.
                         </p>

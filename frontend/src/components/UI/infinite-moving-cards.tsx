@@ -1,7 +1,9 @@
 "use client";
-
+import { useThemeContext } from "../../context/ThemeContext";
 import { cn } from "../../util/utils";
 import React, { useEffect, useState } from "react";
+
+
 
 export const InfiniteMovingCards = ({
     items,
@@ -42,6 +44,11 @@ export const InfiniteMovingCards = ({
             setStart(true);
         }
     }
+    const { isDarkMode } = useThemeContext();
+    console.log("Dark mode active?", isDarkMode);
+
+
+
     const getDirection = () => {
         if (containerRef.current) {
             if (direction === "left") {
@@ -58,6 +65,7 @@ export const InfiniteMovingCards = ({
         }
     };
     const getSpeed = () => {
+
         if (containerRef.current) {
             if (speed === "fast") {
                 containerRef.current.style.setProperty("--animation-duration", "20s");
@@ -72,7 +80,7 @@ export const InfiniteMovingCards = ({
         <div
             ref={containerRef}
             className={cn(
-                "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+                "scroller relative  z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
                 className,
             )}
         >
@@ -86,20 +94,34 @@ export const InfiniteMovingCards = ({
             >
                 {items.map((item, _idx) => (
                     <li
-                        className="relative w-[250px] max-w-76 shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[450px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)] "
+                        className={cn(
+                            "relative w-[250px] max-w-76 shrink-0 rounded-2xl px-8 py-6 md:w-[450px] transition-colors duration-500",
+                            isDarkMode
+                                ? _idx % 2 === 0
+                                    ? "bg-[#1f1f1f] border border-neutral-800"
+                                    : "bg-[#262626] border border-neutral-700"
+                                : _idx % 2 === 0
+                                    ? "bg-white border border-neutral-200"
+                                    : "bg-[#f9f9f9] border border-neutral-300"
+                        )}
                         key={item.name}
                     >
+
+
                         <blockquote>
                             <div
                                 aria-hidden="true"
                                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
                             ></div>
-                            {/* <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
-                                {item.name}
-                            </span> */}
+
                             <div className="relative z-20 mt-6 flex flex-row items-center">
                                 <span className="flex flex-col gap-1">
-                                    <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                                    <span
+                                        className={cn(
+                                            "text-sm leading-[1.6] font-normal transition-colors duration-500",
+                                            isDarkMode ? "text-neutral-400" : "text-neutral-600"
+                                        )}
+                                    >
                                         {item.name}
                                     </span>
                                     <img className="w-44" src={item.logo} alt={item.name} />
@@ -107,7 +129,10 @@ export const InfiniteMovingCards = ({
                             </div>
                         </blockquote>
                     </li>
+
+
                 ))}
+
             </ul>
         </div>
     );
