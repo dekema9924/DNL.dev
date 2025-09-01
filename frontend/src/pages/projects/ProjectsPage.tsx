@@ -1,39 +1,9 @@
 import { useState } from "react";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 import LatestBlogs from "../blogs/LatestBlogs";
-
-type Project = {
-    title: string;
-    description: string;
-    image: string;
-    link: string;
-};
+import { projectsData } from "../../data/ProjectData";
 
 
-const projects: Project[] = [
-    {
-        title: "Ecommerce website",
-        description: "Ecommerce website for the first smart mailbox Custo®.",
-        image:
-            "https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?w=1200&auto=format&fit=crop&q=80",
-        link: "#",
-    },
-    {
-        title: "Portfolio Redesign",
-        description: "Minimal portfolio showcasing projects and design approach.",
-        image:
-            "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1200&auto=format&fit=crop&q=80",
-        link: "#",
-    },
-    {
-        title: "Dashboard UI",
-        description:
-            "Responsive dashboard interface with charts, authentication, and dark mode.",
-        image:
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80",
-        link: "#",
-    },
-];
 
 
 
@@ -41,14 +11,14 @@ export default function ProjectsPage() {
     const [current, setCurrent] = useState(0);
 
     const nextProject = () => {
-        setCurrent((prev) => (prev + 1) % projects.length);
+        setCurrent((prev) => (prev + 1) % projectsData.length);
     };
 
     const prevProject = () => {
-        setCurrent((prev) => (prev - 1 + projects.length) % projects.length);
+        setCurrent((prev) => (prev - 1 + projectsData.length) % projectsData.length);
     };
 
-    const project = projects[current];
+    const project = projectsData[current];
 
     return (
         <section className="px-4 sm:px-10 lg:px-20 py-16 space-y-20">
@@ -68,7 +38,7 @@ export default function ProjectsPage() {
                         {project.description}
                     </p>
                     <a
-                        href={project.link}
+                        href={project.live}
                         className="hidden sm:inline-flex items-center gap-1 text-sm font-medium hover:underline"
                     >
                         Discover <ArrowDown size={16} />
@@ -102,7 +72,7 @@ export default function ProjectsPage() {
 
                 {/* Discover link on mobile */}
                 <a
-                    href={project.link}
+                    href={project.live}
                     className="sm:hidden inline-flex items-center gap-1 text-sm font-medium hover:underline"
                 >
                     Discover <ArrowDown size={16} />
@@ -111,7 +81,7 @@ export default function ProjectsPage() {
 
             {/* Project Counter */}
             <div className="text-center text-gray-500">
-                {current + 1} / {projects.length}
+                {current + 1} / {projectsData.length}
             </div>
 
             {/* Minimal Blog Section */}

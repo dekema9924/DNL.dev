@@ -2,44 +2,10 @@ import { motion } from "motion/react"
 import { ExternalLink } from "lucide-react"
 import { useThemeContext } from "../../context/ThemeContext"
 import Button from "../../components/UI/Button"
+import { projectsData, type ProjectType } from "../../data/ProjectData"
 
-type Project = {
-    title: string
-    description: string
-    img: string
-    tools: string[]
-    live: string
-    github: string
-}
 
-const projects: Project[] = [
-    {
-        title: "Portfolio Website",
-        description: "A modern portfolio built with React, Tailwind, and animations.",
-        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
-        tools: ["React", "TailwindCSS", "Framer Motion"],
-        live: "https://example.com",
-        github: "https://github.com/example",
-    },
-    {
-        title: "Job Board",
-        description: "A SaaS job board platform with live API data.",
-        img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800",
-        tools: ["React.js", "TypeScript", "MongoDB"],
-        live: "https://example.com",
-        github: "https://github.com/example",
-    },
-    {
-        title: "Pluuto.ai",
-        description: "AI-powered SAAS platform for generating images and text.",
-        img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
-        tools: ["Node.js", "React", "Express", "TypeScript", "MongoDB", "OpenAI API"],
-        live: "https://example.com",
-        github: "https://github.com/dekema9924/pluto.ai",
-    },
-]
-
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project }: { project: ProjectType }) => {
     const { isDarkMode } = useThemeContext()
 
     return (
@@ -68,7 +34,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
                 {/* Image preview */}
                 <img
-                    src={project.img}
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-[400px] object-cover"
                 />
@@ -92,7 +58,7 @@ export default function Projects() {
 
             {/* Sticky stacked projects */}
             <div className="relative space-y-10">
-                {projects.map((project) => (
+                {projectsData.slice(0, 3).map((project) => (
                     <div key={project.title} className="sticky top-24">
                         <ProjectCard project={project} />
                     </div>
