@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
-import { useState } from "react"
-import { Github, ExternalLink } from "lucide-react"
+import { ExternalLink } from "lucide-react"
+import { useThemeContext } from "../../context/ThemeContext"
+import Button from "../../components/UI/Button"
 
 type Project = {
     title: string
@@ -18,111 +19,59 @@ const projects: Project[] = [
         img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
         tools: ["React", "TailwindCSS", "Framer Motion"],
         live: "https://example.com",
-        github: "https://github.com/example"
+        github: "https://github.com/example",
     },
     {
         title: "Job Board",
         description: "A SaaS job board platform with live API data.",
         img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800",
-        tools: ["Next.js", "TypeScript", "MongoDB"],
+        tools: ["React.js", "TypeScript", "MongoDB"],
         live: "https://example.com",
-        github: "https://github.com/example"
+        github: "https://github.com/example",
     },
     {
-        title: "Chat App",
-        description: "A real-time chat app with WebSockets and authentication.",
+        title: "Pluuto.ai",
+        description: "AI-powered SAAS platform for generating images and text.",
         img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
-        tools: ["Node.js", "Socket.io", "Express"],
+        tools: ["Node.js", "React", "Express", "TypeScript", "MongoDB", "OpenAI API"],
         live: "https://example.com",
-        github: "https://github.com/example"
-    }
+        github: "https://github.com/dekema9924/pluto.ai",
+    },
 ]
 
-// Direction-aware hover logic
-function getDirection(e: React.MouseEvent<HTMLDivElement, MouseEvent>, el: HTMLElement) {
-    const w = el.offsetWidth
-    const h = el.offsetHeight
-    const x = (e.pageX - el.offsetLeft - w / 2) * (w > h ? h / w : 1)
-    const y = (e.pageY - el.offsetTop - h / 2) * (h > w ? w / h : 1)
-    const d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4
-    return d
-}
-
 const ProjectCard = ({ project }: { project: Project }) => {
-    const [hoverDir, setHoverDir] = useState<number | null>(null)
-
-    const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        const dir = getDirection(e, e.currentTarget)
-        setHoverDir(dir)
-    }
-
-    const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        const dir = getDirection(e, e.currentTarget)
-        setHoverDir(dir)
-    }
+    const { isDarkMode } = useThemeContext()
 
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative w-11/12 mx-auto mb-24 last:mb-0"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="relative w-full mx-auto mb-12 last:mb-0"
         >
             <div
-                className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                className={`relative overflow-hidden rounded-xl shadow-lg ${isDarkMode ? "bg-[#1f1f1f]" : "bg-white"
+                    }`}
             >
-                {/* Image */}
+                {/* Title bar with external link */}
+                <div className="flex justify-between items-center px-6 py-4 border-b border-gray-700">
+                    <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+                    <a
+                        href={project.live}
+                        target="_blank"
+                        className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white"
+                    >
+                        <ExternalLink size={18} />
+                    </a>
+                </div>
+
+                {/* Image preview */}
                 <img
                     src={project.img}
                     alt={project.title}
-                    className="w-full h-[450px] object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-[400px] object-cover"
                 />
-
-                {/* Overlay (direction-aware) */}
-                <motion.div
-                    key={hoverDir} // reset animation each time
-                    initial={{
-                        opacity: 0,
-                        x: hoverDir === 1 ? "100%" : hoverDir === 3 ? "-100%" : 0,
-                        y: hoverDir === 0 ? "-100%" : hoverDir === 2 ? "100%" : 0,
-                    }}
-                    animate={{ opacity: 1, x: 0, y: 0 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100"
-                >
-                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                    <p className="text-sm text-gray-200 mb-2">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                        {project.tools.map((tool) => (
-                            <span
-                                key={tool}
-                                className="text-xs px-2 py-1 bg-white/20 text-white rounded-lg"
-                            >
-                                {tool}
-                            </span>
-                        ))}
-                    </div>
-                    <div className="flex gap-4">
-                        <a
-                            href={project.live}
-                            target="_blank"
-                            className="flex items-center gap-1 text-white hover:text-gray-300"
-                        >
-                            <ExternalLink size={16} /> Live Preview
-                        </a>
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            className="flex items-center gap-1 text-white hover:text-gray-300"
-                        >
-                            <Github size={16} /> GitHub
-                        </a>
-                    </div>
-                </motion.div>
             </div>
         </motion.div>
     )
@@ -130,25 +79,29 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 export default function Projects() {
     return (
-        <section className="max-w-6xl mx-auto px-4 py-16">
-            <div className="mb-16">
-                <span className="text-sm uppercase tracking-widest text-gray-500">
-                    Portfolio
-                </span>
-                <h2 className="text-3xl font-bold mt-2">
-                    Your projects can look like this too
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Explore my portfolio full of creative solutions
-                </p>
-            </div>
+        <section className="max-w-6xl mx-auto px-4">
+            {/* Header */}
+            <motion.h1
+                initial={{ opacity: 0, x: 40, }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="font-extrabold text-[4rem] !text-indigo-400 sm:text-[5rem] md:text-[6rem] tracking-tight  drop-shadow-md text-center "
+            >
+                LATEST WORK
+            </motion.h1>
 
-            <div className="relative">
-                {projects.map((project, i) => (
-                    <div key={project.title} className="sticky top-20">
+            {/* Sticky stacked projects */}
+            <div className="relative space-y-10">
+                {projects.map((project) => (
+                    <div key={project.title} className="sticky top-24">
                         <ProjectCard project={project} />
                     </div>
                 ))}
+            </div>
+
+            {/* Explore button */}
+            <div className="flex justify-end mt-12">
+                <Button style="border" text="Explore" link="/projects" />
             </div>
         </section>
     )

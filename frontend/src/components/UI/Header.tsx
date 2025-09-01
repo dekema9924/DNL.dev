@@ -1,31 +1,114 @@
 import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 import { useThemeContext } from "../../context/ThemeContext"
+import { useEffect } from "react"
+import { useMenuContext } from "../../context/MenuContext"
+
 
 function Header() {
     const location = useLocation()
     const path = location.pathname
     const { isDarkMode, toggleTheme } = useThemeContext()
+    const { toggleMenu, isMenuOpen } = useMenuContext()
 
 
+    // Prevent background scrolling when menu is open
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.classList.add("overflow-hidden")
+        } else {
+            document.body.classList.remove("overflow-hidden")
+        }
+    }, [isMenuOpen])
 
+    //handle menu open
+    const HandleisMenuOpen = () => {
+        toggleMenu()
+    }
 
     return (
-        <header className="flex items-center justify-between  h-12 m-auto  ">
+        <header className="flex relative items-center justify-between  h-12 m-auto  ">
             {/* //nav links */}
             <ul className="md:flex items-center gap-5 hidden   ">
                 <Link to={'/'} className={` ${path === '/' ? "font-bold " : ''} after:content-[''] relative after:h-full after:-right-2 after:rotate-20 after:border-r after:absolute `}>HOME</Link>
                 <Link to={'/about'} className={` ${path === '/about' ? "font-bold " : ''} after:content-[''] relative after:h-full after:-right-2 after:rotate-20 after:border-r after:absolute `}>ABOUT</Link>
-                <Link to={'/project'} className={` ${path === '/project' ? "font-bold " : ''}after:content-[''] relative after:h-full after:-right-2 after:rotate-20 after:border-r after:absolute `}>PROJECTS</Link>
-                <Link to={'/contact'} className={`${path === '/contact' ? "font-bold " : ''}`}>LET'S TALK</Link>
+                <Link to={'/projects'} className={` ${path === '/project' ? "font-bold " : ''}after:content-[''] relative after:h-full after:-right-2 after:rotate-20 after:border-r after:absolute `}>PROJECTS</Link>
+                <Link to={'/blogs'} className={`${path === '/contact' ? "font-bold " : ''}`}>BLOGS</Link>
             </ul>
 
             {/* //hamburger menu */}
-            <div className="flex flex-col md:hidden gap-2 cursor-pointer">
-                <span className="border-t block w-8 "></span>
-                <span className="border-t block w-8 "></span>
-                <span className="border-t block w-8 "></span>
+            <div
+                onClick={HandleisMenuOpen}
+                className="flex flex-col md:hidden gap-2 cursor-pointer relative w-8 h-8 justify-center items-center"
+            >
+                <span
+                    className={`block h-[2px] w-8 bg-white rounded transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-[6px]" : ""
+                        }`}
+                ></span>
+                <span
+                    className={`block h-[2px] w-8 bg-white rounded transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""
+                        }`}
+                ></span>
+                <span
+                    className={`block h-[2px] w-8 bg-white rounded transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+                        }`}
+                ></span>
             </div>
+
+
+
+            {/* //mobile nav */}
+
+            <ul
+                className={`flex flex-col absolute left-0 top-12 z-50 w-full 
+    rounded-md items-center justify-center 
+    overflow-hidden transition-all duration-500 
+    ${isMenuOpen ? "max-h-80 py-4 gap-4 border border-gray-700" : "max-h-0 py-0 gap-0 border-0 opacity-0"}
+  `}
+            >
+                <Link
+                    onClick={HandleisMenuOpen}
+                    to="/"
+                    className={`block px-4 py-2 text-sm tracking-wide transition-colors 
+      hover:text-indigo-400 ${path === "/" ? "font-bold text-indigo-400" : "text-white"}
+    `}
+                >
+                    HOME
+                </Link>
+
+                <Link
+                    onClick={HandleisMenuOpen}
+                    to="/about"
+                    className={`block px-4 py-2 text-sm tracking-wide transition-colors 
+      hover:text-indigo-400 ${path === "/about" ? "font-bold text-indigo-400" : "text-white"}
+    `}
+                >
+                    ABOUT
+                </Link>
+
+                <Link
+                    onClick={HandleisMenuOpen}
+                    to="/projects"
+                    className={`block px-4 py-2 text-sm tracking-wide transition-colors 
+      hover:text-indigo-400 ${path === "/projects" ? "font-bold text-indigo-400" : "text-white"}
+    `}
+                >
+                    PROJECTS
+                </Link>
+
+                <Link
+                    onClick={HandleisMenuOpen}
+                    to="/blogs"
+                    className={`block px-4 py-2 text-sm tracking-wide transition-colors 
+      hover:text-indigo-400 ${path === "/blogs" ? "font-bold text-indigo-400" : "text-white"}
+    `}
+                >
+                    BLOGS
+                </Link>
+            </ul>
+
+
+
 
             {/* //logo */}
             <div className="flex items-center gap-2">

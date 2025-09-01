@@ -17,6 +17,7 @@ body {
   color: #1a1a1a; /* deep charcoal text */
   font-family: "Georgia", "Times New Roman", serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -54,4 +55,34 @@ body .dark a {
 
 body .dark a:hover {
   color: #aecbfa; /* lighter blue on hover */
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blink 1.5s infinite;
 }

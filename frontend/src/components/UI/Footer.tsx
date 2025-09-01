@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
+
 export default function Footer() {
     return (
-        <footer className="bg-[#1d1d1d] text-white border-t border-gray-600 px-6 py-12">
+        <footer className="bg-[#1d1d1d] text-white border-t border-gray-600 px-6 mt-16 py-16 w-full">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
 
                 {/* Newsletter */}
@@ -21,7 +22,7 @@ export default function Footer() {
                 </div>
 
                 {/* Social Media */}
-                <div>
+                {/* <div>
                     <h3 className="uppercase text-sm font-semibold mb-4">Social Media</h3>
                     <ul className="space-y-2 ">
                         <li><a href="#" className="hover:text-white">Facebook</a></li>
@@ -29,7 +30,7 @@ export default function Footer() {
                         <li><a href="#" className="hover:text-white">Pinterest</a></li>
                         <li><a href="#" className="hover:text-white">Twitter/X</a></li>
                     </ul>
-                </div>
+                </div> */}
 
                 {/* Let's Talk */}
                 <div>
@@ -43,17 +44,17 @@ export default function Footer() {
 
                 {/* Navigation with React Router */}
                 <div className="flex flex-col space-y-3 text-sm font-semibold">
-                    <Link to="/" className="hover:text-gray-400">Home →</Link>
-                    <Link to="/portfolio" className="hover:text-gray-400">Portfolio →</Link>
-                    <Link to="/blog" className="hover:text-gray-400">Blog/News →</Link>
-                    <Link to="/contact" className="hover:text-gray-400">Contact Us →</Link>
+                    <Link onClick={() => window.scrollTo(0, 0)} to="/" className="hover:text-gray-400">Home →</Link>
+                    <Link to="/about" className="hover:text-gray-400">About →</Link>
+                    <Link to="/blogS" className="hover:text-gray-400">Blog/News →</Link>
+                    <Link to="/projects" className="hover:text-gray-400">My Projects →</Link>
                 </div>
             </div>
 
             {/* Bottom Branding */}
             <div className="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
                 <h1 className="text-3xl font-bold tracking-widest">DNL.DEV</h1>
-                <span className="text-2xl">↗</span>
+                <span onClick={() => window.scrollTo(0, 0)} className="cursor-pointer text-2xl">↗</span>
             </div>
 
             {/* Copyright */}

@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "Scrum Master vs Project Manager: Key Differences You Should Know",
+        "description": "Scrum Masters and Project Managers both guide teams, but their approaches are completely different. Learn the distinctions and when to choose each role.",
+        "img": "https://images.unsplash.com/photo-1581092588429-1c76e2a3b5dd?w=800&auto=format&fit=crop&q=60",
+        "author": "Daniel Ekema",
+        "authorImg": "https://images.unsplash.com/photo-1743601570341-7844e7862d29?w=500&auto=format&fit=crop&q=60",
+        "date": "August 31, 2025",
+        "readTime": "8 MIN",
+        "content": [
+            "Scrum Masters focus on enabling teams to self-organize and deliver iteratively. Their role is to coach, remove blockers, and protect the team from external disruptions.",
+            "On the other hand, Project Managers emphasize planning, resource allocation, and ensuring project goals are met within scope, time, and budget.",
+            "Both roles are essential, but they thrive in different environments. Agile teams benefit from Scrum Masters, while traditional or hybrid teams often need Project Managers."
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Breaking Into Full-Stack Development",
+        "description": "Thinking of becoming a full-stack developer? Here are the tools, strategies, and mindsets to help you break into the industry.",
+        "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
+        "author": "Jane Doe",
+        "authorImg": "https://randomuser.me/api/portraits/women/44.jpg",
+        "date": "August 20, 2025",
+        "readTime": "6 MIN",
+        "content": [
+            "Start with the basics: HTML, CSS, and JavaScript. These are the foundation of everything you’ll build.",
+            "Then move into backend technologies like Node.js or Python with Express or Django. Understand databases like MongoDB or PostgreSQL.",
+            "Finally, practice building full projects, deploy them, and showcase your skills on GitHub and a personal portfolio."
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Why Cybersecurity Matters in 2025",
+        "description": "With cyber threats growing, protecting digital assets has never been more critical. Here’s why cybersecurity should be your priority.",
+        "img": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&auto=format&fit=crop&q=60",
+        "author": "Michael Scott",
+        "authorImg": "https://randomuser.me/api/portraits/men/32.jpg",
+        "date": "July 15, 2025",
+        "readTime": "7 MIN",
+        "content": [
+            "Cyberattacks are increasing in scale and sophistication, targeting not just enterprises but individuals.",
+            "Data breaches can cost millions and destroy reputations overnight.",
+            "Investing in strong passwords, multi-factor authentication, and awareness training are the first steps to safeguarding information."
+        ]
+    },
+    {
+        "id": 4,
+        "title": "The Rise of AI in Everyday Life",
+        "description": "AI is no longer just a buzzword — it’s shaping the way we live, work, and connect. Let’s explore how AI is transforming industries and daily tasks.",
+        "img": "https://images.unsplash.com/photo-1686191128443-65c3ab7e2d37?w=800&auto=format&fit=crop&q=60",
+        "author": "Sophia Lee",
+        "authorImg": "https://randomuser.me/api/portraits/women/68.jpg",
+        "date": "June 10, 2025",
+        "readTime": "5 MIN",
+        "content": [
+            "From virtual assistants to recommendation systems, AI is quietly integrated into our routines.",
+            "Healthcare is seeing breakthroughs with AI-assisted diagnosis, while businesses optimize operations with machine learning.",
+            "The challenge ahead is balancing innovation with ethical responsibility and ensuring fairness in AI systems."
+        ]
+    }
+]

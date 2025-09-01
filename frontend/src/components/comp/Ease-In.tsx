@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { motion } from 'motion/react';
 import { type ReactNode } from 'react';
 
 interface EaseInProps {
@@ -9,14 +9,12 @@ function EaseIn({ children }: EaseInProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            viewport={{ amount: 0.8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeIn' }}
         >
             {children}
         </motion.div>
-
-    )
+    );
 }
 
-export default EaseIn
+export default EaseIn;
