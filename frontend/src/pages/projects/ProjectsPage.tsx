@@ -9,12 +9,6 @@ type Project = {
     link: string;
 };
 
-type Blog = {
-    title: string;
-    date: string;
-    excerpt: string;
-    link: string;
-};
 
 const projects: Project[] = [
     {
@@ -41,20 +35,7 @@ const projects: Project[] = [
     },
 ];
 
-const blogs: Blog[] = [
-    {
-        title: "Why I Built My Own Portfolio",
-        date: "Aug 20, 2025",
-        excerpt: "Sharing the thought process and tools I used when redesigning my portfolio from scratch.",
-        link: "#",
-    },
-    {
-        title: "Lessons from My First SaaS Project",
-        date: "Jul 15, 2025",
-        excerpt: "Some challenges I faced building a SaaS product in the MERN stack and what I learned.",
-        link: "#",
-    },
-];
+
 
 export default function ProjectsPage() {
     const [current, setCurrent] = useState(0);

@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-import { useThemeContext } from "../../context/ThemeContext";
 import blogPost from "../../data/Blogs.json";
 
 function Blogs() {
-    const { isDarkMode } = useThemeContext();
 
     return (
         <div className="min-h-screen pt-10 px-4 md:px-10 transition-colors duration-500">
