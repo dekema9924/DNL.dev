@@ -19,35 +19,35 @@ export const projectsData: ProjectType[] = [
     title: "Mangaverse",
     description: "A modern MangaReading website with a sleek design.",
     image: mangaverse,
-    live: "https://example.com",
-    github: "https://github.com/example",
+    live: "https://manga.devwithdaniel.com",
+    github: "https://github.com/dekema9924/MangaVerse",
   },
   {
     title: "Brainwave",
     description: "AI-powered frontend platform.",
     image: brainwave,
-    live: "https://example.com",
-    github: "https://github.com/dekema9924/pluto.ai",
+    live: "https://br0inwave.netlify.app",
+    github: "https://github.com/dekema9924/AIBRAINWAVE",
   },
   {
-    title: "Job Board",
+    title: "Stack Apply",
     description: "A  job board platform with live API data.",
     image: stackApply,
-    live: "https://example.com",
-    github: "https://github.com/example",
+    live: "https://stackapply.netlify.app",
+    github: "https://github.com/dekema9924/StackApply",
   },
   {
     title: "Pluto.ai",
     description: "AI-powered frontend platform.",
     image: plutoai,
-    live: "https://example.com",
-    github: ""
+    live: "https://plutoa1.netlify.app/",
+    github: "https://github.com/dekema9924/pluto.ai"
   },
   {
     title: "AI Chatbot",
     description: "AI-powered chatbot for customer support.",
     image: aichatbot,
-    live: "https://example.com",
-    github: " "
+    live: "https://cybrs.netlify.app/",
+    github: "https://github.com/dekema9924/AIChatBot"
   },
 ];
