@@ -19,13 +19,13 @@ function Contact() {
     return (
         <div
             className={`flex flex-col items-center justify-center ${isDarkMode
-                    ? "text-white bg-[#1f1f1f]/80"
-                    : "text-black shadow-2xl"
+                ? "text-white bg-[#1f1f1f]/80"
+                : "text-black shadow-2xl"
                 } rounded-3xl mt-20 mb-10 p-6 max-w-3xl mx-auto`}
         >
             {/* Responsive Heading */}
             <h1 className="font-bold flex tracking-wider items-center gap-1 relative 
-        text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+          md:text-6xl lg:text-7xl">
                 {text.map((char, i) => (
                     <motion.span
                         key={i}
@@ -74,8 +74,8 @@ function Contact() {
                             setIsCopied(true);
                     }}
                     className={`border border-indigo-500 ${isDarkMode
-                            ? "!text-gray-200 hover:text-white"
-                            : "text-gray-500 hover:text-black"
+                        ? "!text-gray-200 hover:text-white"
+                        : "text-gray-500 hover:text-black"
                         } transition-colors duration-500 cursor-pointer 
           px-4 sm:px-6 py-2 rounded-2xl text-sm sm:text-base`}
                 >

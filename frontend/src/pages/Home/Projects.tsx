@@ -14,7 +14,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative w-full mx-auto mb-12 last:mb-0"
+            className="relative w-full mx-auto mb-12 last:mb-0 overflow-x-hidden"
         >
             <div
                 className={`relative overflow-hidden rounded-xl shadow-lg ${isDarkMode ? "bg-[#1f1f1f]" : "bg-white"
