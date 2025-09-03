@@ -19,7 +19,6 @@ export default function AboutSection() {
                 className="flex flex-col md:flex-row justify-between items-center w-11/12 md:w-10/12 lg:w-9/12 mx-auto gap-10"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
             >
                 <div className="text-center md:text-left">
                     <motion.h1
