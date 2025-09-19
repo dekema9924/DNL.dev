@@ -1,5 +1,11 @@
 import React from "react";
 import { motion } from "motion/react";
+import kidme from '../../assets/Images/kidme.png'
+import me from '../../assets/Images/me.png'
+import soccercup from '../../assets/Images/soccer.png'
+
+
+
 
 type PortfolioItem = {
     category: string;
@@ -13,19 +19,19 @@ const portfolioItems: PortfolioItem[] = [
         category: "COMMERCIAL SHOOT",
         title: "THE MINIMAL BRAND SERIES",
         year: 2024,
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=60",
+        image: me,
     },
     {
         category: "FAMILY & KIDS",
         title: "MORNING WHISPERS",
         year: 2024,
-        image: "https://images.unsplash.com/photo-1618641986557-1ecd230959aa?w=800&auto=format&fit=crop&q=60",
+        image: kidme,
     },
     {
         category: "EVENT COVERAGE",
         title: "EVENING LIGHTS FESTIVAL",
         year: 2023,
-        image: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=800&auto=format&fit=crop&q=60",
+        image: soccercup,
     },
     {
         category: "COMMERCIAL SHOOT",
@@ -71,7 +77,7 @@ const PortfolioGrid: React.FC = () => {
                             <img
                                 src={item.image}
                                 alt={item.title}
-                                className="w-full h-72 object-cover rounded"
+                                className="w-full h-[670px] object-cover rounded object-center"
                             />
                             <p className="text-sm text-gray-500 uppercase tracking-wide">
                                 {item.category}
