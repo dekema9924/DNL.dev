@@ -39,18 +39,18 @@ function Header() {
             {/* //hamburger menu */}
             <div
                 onClick={HandleisMenuOpen}
-                className="flex flex-col md:hidden gap-2 cursor-pointer relative w-8 h-8 justify-center items-center"
+                className="flex flex-col md:hidden gap-2 cursor-pointer relative w-8 h-8 justify-center items-center z-50"
             >
                 <span
-                    className={`block h-[2px] w-8 bg-white rounded transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-[6px]" : ""
+                    className={`block h-[2px] w-8 ${isDarkMode ? "bg-white" : "bg-black"} rounded transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-[6px]" : ""
                         }`}
                 ></span>
                 <span
-                    className={`block h-[2px] w-8 bg-white rounded transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""
+                    className={`block h-[2px] w-8 ${isDarkMode ? "bg-white" : "bg-black"} rounded transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""
                         }`}
                 ></span>
                 <span
-                    className={`block h-[2px] w-8 bg-white rounded transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+                    className={`block h-[2px] w-8 ${isDarkMode ? "bg-white" : "bg-black"} rounded transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
                         }`}
                 ></span>
             </div>
@@ -58,18 +58,17 @@ function Header() {
 
 
             {/* //mobile nav */}
-
             <ul
-                className={`flex flex-col absolute left-0 top-12 z-50 w-full 
-    rounded-md items-center justify-center 
-    overflow-hidden transition-all duration-500 
-    ${isMenuOpen ? "max-h-80 py-4 gap-4 border border-gray-700" : "max-h-0 py-0 gap-0 border-0 opacity-0"}
+                className={`flex flex-col fixed inset-0 z-40 
+    items-center justify-center bg-[#1f1f1f] 
+    transition-all duration-500
+    ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}
   `}
             >
                 <Link
                     onClick={HandleisMenuOpen}
                     to="/"
-                    className={`block px-4 py-2 text-sm tracking-wide transition-colors 
+                    className={`block px-6 py-3 text-lg tracking-wide transition-colors 
       hover:text-indigo-400 ${path === "/" ? "font-bold text-indigo-400" : "text-white"}
     `}
                 >
@@ -79,7 +78,7 @@ function Header() {
                 <Link
                     onClick={HandleisMenuOpen}
                     to="/about"
-                    className={`block px-4 py-2 text-sm tracking-wide transition-colors 
+                    className={`block px-6 py-3 text-lg tracking-wide transition-colors 
       hover:text-indigo-400 ${path === "/about" ? "font-bold text-indigo-400" : "text-white"}
     `}
                 >
@@ -89,7 +88,7 @@ function Header() {
                 <Link
                     onClick={HandleisMenuOpen}
                     to="/projects"
-                    className={`block px-4 py-2 text-sm tracking-wide transition-colors 
+                    className={`block px-6 py-3 text-lg tracking-wide transition-colors 
       hover:text-indigo-400 ${path === "/projects" ? "font-bold text-indigo-400" : "text-white"}
     `}
                 >
@@ -99,7 +98,7 @@ function Header() {
                 <Link
                     onClick={HandleisMenuOpen}
                     to="/blogs"
-                    className={`block px-4 py-2 text-sm tracking-wide transition-colors 
+                    className={`block px-6 py-3 text-lg tracking-wide transition-colors 
       hover:text-indigo-400 ${path === "/blogs" ? "font-bold text-indigo-400" : "text-white"}
     `}
                 >

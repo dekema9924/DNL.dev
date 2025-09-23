@@ -1,8 +1,8 @@
 import { InfiniteMovingCards } from "../../components/UI/infinite-moving-cards"
 import meta from '../../assets/company/meta.png';
+import fiserv from '../../assets/company/Fiserv_logo.png'
+import fedex from '../../assets/company/fedex.png'
 import shopify from '../../assets/company/shopify.png';
-import starbucks from '../../assets/company/starbucks.png';
-import tesla from '../../assets/company/tesla.png';
 import nodejs from '../../assets/tech/nodejs.png';
 import javascript from '../../assets/tech/javascript.png';
 import mongodb from '../../assets/tech/mongodb.png';
@@ -17,6 +17,7 @@ import AnimatedLine from "../../components/UI/AnimatedLine";
 import { motion } from "motion/react";
 import ExperienceTimeline from "./ExperienceTimeline";
 import Button from "../../components/UI/Button";
+import me from '../../assets/Images/me.png'
 
 function Hero() {
     const companies = [
@@ -29,12 +30,12 @@ function Hero() {
             logo: shopify,
         },
         {
-            name: 'Starbucks',
-            logo: starbucks,
+            name: 'FedEx corp.',
+            logo: fedex,
         },
         {
-            name: 'Tesla',
-            logo: tesla,
+            name: 'fiserv',
+            logo: fiserv,
         },
     ];
 
@@ -82,11 +83,13 @@ function Hero() {
                 </div>
                 <div className="h-96 overflow-hidden rounded-2xl">
                     <img
-                        className="w-full h-full object-cover object-center"
-                        src="https://images.unsplash.com/photo-1755541516517-bb95790dc7ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8"
-                        alt="profile"
+                        className="w-full h-full object-cover object-[50%_20%] lg:object-[50%_25%]"
+                        src={me}
+                        alt="me"
                     />
                 </div>
+
+
 
 
             </EaseIn>

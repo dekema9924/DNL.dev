@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, Github as GitHubIcon } from "lucide-react"
 import { useThemeContext } from "../../context/ThemeContext"
 import Button from "../../components/UI/Button"
 import { projectsData, type ProjectType } from "../../data/ProjectData"
@@ -14,32 +14,52 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative w-full mx-auto mb-12 last:mb-0 "
+            className="relative w-full mx-auto mb-12 last:mb-0"
         >
             <div
-                className={`relative overflow-hidden  rounded-xl shadow-sm bg-[#1f1f1f]  ${isDarkMode ? " shadow-indigo-400 " : " shadow-indigo-200 shadow-2xl "
+                className={`relative overflow-hidden rounded-xl bg-[#1f1f1f] ${isDarkMode ? "shadow-indigo-400" : "shadow-indigo-200 shadow-2xl"
                     }`}
             >
-                {/* Title bar with external link */}
-                <div className="flex justify-between items-center px-6 py-4  border-b border-gray-700">
+                {/* Title bar with external + GitHub links */}
+                <div className="flex justify-between items-center px-6 py-4 border-b border-gray-700">
                     <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-                    <a
-                        href={project.live}
-                        target="_blank"
-                        className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white"
-                    >
-                        <ExternalLink className={`text-white`} size={18} />
-                    </a>
+                    <div className="flex items-center gap-3">
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+                        >
+                            <GitHubIcon className="text-white" size={18} />
+                        </a>
+                        <a
+                            href={project.live}
+                            target="_blank"
+                            className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+                        >
+                            <ExternalLink className="text-white" size={18} />
+                        </a>
+                    </div>
                 </div>
 
-                {/* Image preview */}
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-[400px] object-cover "
-                />
+                {/* Image preview with hover zoom */}
+                <div className="overflow-hidden">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-[400px] object-cover transform transition-transform duration-500 hover:scale-105"
+                    />
+                </div>
+
+                {/* Project description */}
+                <div className="px-6 py-5">
+                    <p className="!text-white leading-relaxed">
+                        {project.description}
+                    </p>
+                </div>
             </div>
         </motion.div>
+
+
     )
 }
 

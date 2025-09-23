@@ -1,62 +1,130 @@
 [
     {
         "id": 1,
-        "title": "Scrum Master vs Project Manager: Key Differences You Should Know",
-        "description": "Scrum Masters and Project Managers both guide teams, but their approaches are completely different. Learn the distinctions and when to choose each role.",
-        "img": "https://images.unsplash.com/photo-1581092588429-1c76e2a3b5dd?w=800&auto=format&fit=crop&q=60",
-        "author": "Daniel Ekema",
+        "title": "Agile vs Waterfall: Which Approach Fits Your Project?",
+        "description": "Agile and Waterfall are two very different ways to deliver software. Here’s how to decide which one makes sense for your team and project goals.",
+        "genre": "IT News",
+        "img": "https://www.softqubes.com/wp-content/uploads/2024/05/Agile-vs.-Waterfall_-Choosing-the-Right-Project-Management-Approach-for-Your-Team-1.webp",
+        "author": "Daniel E.",
         "authorImg": "https://images.unsplash.com/photo-1743601570341-7844e7862d29?w=500&auto=format&fit=crop&q=60",
         "date": "August 31, 2025",
         "readTime": "8 MIN",
         "content": [
-            "Scrum Masters focus on enabling teams to self-organize and deliver iteratively. Their role is to coach, remove blockers, and protect the team from external disruptions.",
-            "On the other hand, Project Managers emphasize planning, resource allocation, and ensuring project goals are met within scope, time, and budget.",
-            "Both roles are essential, but they thrive in different environments. Agile teams benefit from Scrum Masters, while traditional or hybrid teams often need Project Managers."
+            "Agile is built around short iterations, adaptability, and team collaboration.",
+            "Waterfall focuses on linear planning, strict documentation, and stage-by-stage delivery.",
+            "The right choice depends on your team size, project complexity, and flexibility requirements."
         ]
     },
     {
         "id": 2,
-        "title": "Breaking Into Full-Stack Development",
-        "description": "Thinking of becoming a full-stack developer? Here are the tools, strategies, and mindsets to help you break into the industry.",
-        "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
-        "author": "Jane Doe",
-        "authorImg": "https://randomuser.me/api/portraits/women/44.jpg",
+        "title": "How to Build Your First Portfolio Website",
+        "description": "Every developer needs a portfolio. Here’s how to design, build, and deploy your first site to showcase your projects.",
+        "genre": "Coding",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhuMyS9_2E5pQBcmQbAiX07E89W56zWfd1cQ&s",
+        "author": "Daniel E.",
+        "authorImg": "https://images.unsplash.com/photo-1743601570341-7844e7862d29?w=500&auto=format&fit=crop&q=60",
         "date": "August 20, 2025",
         "readTime": "6 MIN",
         "content": [
-            "Start with the basics: HTML, CSS, and JavaScript. These are the foundation of everything you’ll build.",
-            "Then move into backend technologies like Node.js or Python with Express or Django. Understand databases like MongoDB or PostgreSQL.",
-            "Finally, practice building full projects, deploy them, and showcase your skills on GitHub and a personal portfolio."
+            "Start with HTML, CSS, and simple layouts before adding JavaScript.",
+            "Use frameworks like React or Next.js to make your site dynamic.",
+            "Deploy on free platforms like Netlify or Vercel to share your work publicly."
         ]
     },
     {
         "id": 3,
-        "title": "Why Cybersecurity Matters in 2025",
-        "description": "With cyber threats growing, protecting digital assets has never been more critical. Here’s why cybersecurity should be your priority.",
+        "title": "Top Cybersecurity Threats to Watch in 2025",
+        "description": "From phishing scams to AI-powered malware, here are the biggest security risks organizations and individuals face this year.",
+        "genre": "IT News",
         "img": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&auto=format&fit=crop&q=60",
-        "author": "Michael Scott",
-        "authorImg": "https://randomuser.me/api/portraits/men/32.jpg",
+        "author": "Daniel E.",
+        "authorImg": "https://images.unsplash.com/photo-1743601570341-7844e7862d29?w=500&auto=format&fit=crop&q=60",
         "date": "July 15, 2025",
         "readTime": "7 MIN",
         "content": [
-            "Cyberattacks are increasing in scale and sophistication, targeting not just enterprises but individuals.",
-            "Data breaches can cost millions and destroy reputations overnight.",
-            "Investing in strong passwords, multi-factor authentication, and awareness training are the first steps to safeguarding information."
+            "Hackers are increasingly using AI to automate attacks and bypass defenses.",
+            "Cloud services remain a major target due to weak access controls.",
+            "Security in 2025 means staying proactive, using MFA, and educating end-users."
         ]
     },
     {
         "id": 4,
-        "title": "The Rise of AI in Everyday Life",
-        "description": "AI is no longer just a buzzword — it’s shaping the way we live, work, and connect. Let’s explore how AI is transforming industries and daily tasks.",
-        "img": "https://images.unsplash.com/photo-1686191128443-65c3ab7e2d37?w=800&auto=format&fit=crop&q=60",
-        "author": "Sophia Lee",
-        "authorImg": "https://randomuser.me/api/portraits/women/68.jpg",
+        "title": "Beginner’s Guide to APIs: What They Are and Why They Matter",
+        "description": "If you’re new to coding, APIs might sound intimidating. Here’s a beginner-friendly breakdown of what they do and how you can start using them.",
+        "genre": "Beginner Tech Insights",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAJo0_4YGDKLuyL3_WBTpJDk5VY7HOQ9cPjw&s",
+        "author": "Daniel E.",
+        "authorImg": "https://images.unsplash.com/photo-1743601570341-7844e7862d29?w=500&auto=format&fit=crop&q=60",
         "date": "June 10, 2025",
         "readTime": "5 MIN",
         "content": [
-            "From virtual assistants to recommendation systems, AI is quietly integrated into our routines.",
-            "Healthcare is seeing breakthroughs with AI-assisted diagnosis, while businesses optimize operations with machine learning.",
-            "The challenge ahead is balancing innovation with ethical responsibility and ensuring fairness in AI systems."
+            "An API (Application Programming Interface) is a way for apps to talk to each other.",
+            "They let developers use existing tools, services, and data without rebuilding everything from scratch.",
+            "Try calling simple APIs like weather or movie databases to practice."
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Why Learning Git is Essential for Every Developer",
+        "description": "Version control isn’t optional anymore. Git helps you track changes, collaborate, and avoid disasters in coding projects.",
+        "genre": "Coding",
+        "img": "data:image/jpeg;base64,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",
+        "author": "Daniel E.",
+        "authorImg": "https://images.unsplash.com/photo-1743601570341-7844e7862d29?w=500&auto=format&fit=crop&q=60",
+        "date": "May 28, 2025",
+        "readTime": "6 MIN",
+        "content": [
+            "Git allows you to save snapshots of your work and roll back when needed.",
+            "Collaboration on platforms like GitHub makes team projects easier and more transparent.",
+            "Learning Git basics like branching, commits, and pull requests is a must-have skill."
+        ]
+    },
+    {
+        "id": 6,
+        "title": "What is Cloud Computing? A Beginner’s Breakdown",
+        "description": "The cloud powers most modern apps and services. Here’s a simple explanation of what it is and why it matters.",
+        "genre": "Beginner Tech Insights",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-6rO62M2uoWM5BowZStDIgnlzgxTI_qb7Q&s",
+        "author": "Daniel E.",
+        "authorImg": "https://images.unsplash.com/photo-1743601570341-7844e7862d29?w=500&auto=format&fit=crop&q=60",
+        "date": "May 10, 2025",
+        "readTime": "5 MIN",
+        "content": [
+            "Cloud computing means renting servers, storage, and services online instead of owning hardware.",
+            "It allows businesses to scale quickly without large upfront costs.",
+            "Everyday examples include Google Drive, Dropbox, and Netflix streaming."
+        ]
+    },
+    {
+        "id": 7,
+        "title": "The Role of AI in Software Development",
+        "description": "AI isn’t just automating tasks — it’s changing how we code, debug, and even design applications.",
+        "genre": "IT News",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XcRyck1zF7335EYRRtuc2I74e9BuiuSrAA&s",
+        "author": "Daniel E.",
+        "authorImg": "https://images.unsplash.com/photo-1743601570341-7844e7862d29?w=500&auto=format&fit=crop&q=60",
+        "date": "April 22, 2025",
+        "readTime": "7 MIN",
+        "content": [
+            "AI-powered code assistants help developers speed up repetitive tasks.",
+            "Automated testing tools reduce human error and improve quality.",
+            "The big question remains: how much should developers rely on AI versus human judgment?"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Debugging Made Simple: Tips for Beginners",
+        "description": "Debugging can be frustrating, but with the right mindset and tools, it becomes one of the most valuable skills in coding.",
+        "genre": "Coding",
+        "img": "https://images.prismic.io/turing/Zjo5V0MTzAJOCnMb_Effective-Strategies-For-Debugging-Complex-Code.webp?auto=format,compress",
+        "author": "Daniel E.",
+        "authorImg": "https://images.unsplash.com/photo-1743601570341-7844e7862d29?w=500&auto=format&fit=crop&q=60",
+        "date": "April 1, 2025",
+        "readTime": "6 MIN",
+        "content": [
+            "Start by reading error messages carefully — they usually point to the issue.",
+            "Use console logs or debuggers to trace how data flows in your program.",
+            "Remember: debugging is not just fixing errors, but also understanding how your code works."
         ]
     }
 ]

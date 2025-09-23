@@ -1,6 +1,6 @@
 import { motion, type Variants } from "motion/react";
-import PortfolioGrid from "./PorfolioGrid";
 import AnimatedLine from "../../components/UI/AnimatedLine";
+import me from '../../assets/Images/me.png'
 
 const textVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -88,7 +88,6 @@ export default function AboutSection() {
                 </div>
             </motion.div>
 
-            <PortfolioGrid />
         </section>
     );
 }
