@@ -78,7 +78,7 @@ export default function Projects() {
 
             {/* Sticky stacked projects */}
             <div className="relative space-y-10 ">
-                {projectsData.slice(0, 3).map((project) => (
+                {projectsData.slice(1, 4).map((project) => (
                     <div key={project.title} className="sticky top-24">
                         <ProjectCard project={project} />
                     </div>

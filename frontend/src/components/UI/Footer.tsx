@@ -16,9 +16,24 @@ export default function Footer() {
                             type="email"
                             placeholder="Your email here"
                             className="bg-transparent w-full px-2 py-2 text-sm focus:outline-none"
+                            id="emailInput"
                         />
-                        <button className="text-xl">→</button>
+                        <button
+                            className="text-xl"
+                            onClick={() => {
+                                const emailInput = document.getElementById("emailInput") as HTMLInputElement | null;
+                                const email = emailInput?.value;
+                                if (email) {
+                                    window.location.href = `mailto:${email}`;
+                                } else {
+                                    alert("Please enter an email address");
+                                }
+                            }}
+                        >
+                            →
+                        </button>
                     </div>
+
                 </div>
 
                 {/* Social Media */}

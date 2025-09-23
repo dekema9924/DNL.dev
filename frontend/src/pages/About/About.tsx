@@ -1,5 +1,6 @@
 import { motion, type Variants } from "motion/react";
 import AnimatedLine from "../../components/UI/AnimatedLine";
+import portrait from '../../assets/Images/portrait.jpg'
 
 const textVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -46,7 +47,7 @@ export default function AboutSection() {
                 >
                     <motion.img
                         className="w-64 h-80 object-cover rounded-2xl shadow-[0_0_20px_rgba(59,130,246,0.4)]"
-                        src="https://plus.unsplash.com/premium_photo-1673866484792-c5a36a6c025e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                        src={portrait}
                         alt="profile"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
