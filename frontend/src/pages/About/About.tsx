@@ -1,6 +1,5 @@
 import { motion, type Variants } from "motion/react";
 import AnimatedLine from "../../components/UI/AnimatedLine";
-import me from '../../assets/Images/me.png'
 
 const textVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
