@@ -18,6 +18,7 @@ import { motion } from "motion/react";
 import ExperienceTimeline from "./ExperienceTimeline";
 import Button from "../../components/UI/Button";
 import me from '../../assets/Images/me.png'
+import nextJs from '../../assets/company/Next.js.png'
 
 function Hero() {
     const companies = [
@@ -67,6 +68,10 @@ function Hero() {
         {
             name: 'Tailwind CSS',
             logo: tailwind,
+        },
+        {
+            name: 'Nextjs',
+            logo: nextJs,
         },
     ];
 
